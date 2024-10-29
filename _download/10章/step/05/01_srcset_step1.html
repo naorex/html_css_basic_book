@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Sawarabi+Mincho&display=swap">
+    <link rel="stylesheet" href="css/01_srcset_step1.css"><!-- ←皆さんのファイルは css/style.css が読み込まれているのが正しいです -->
+    <title>Wedding Party Invitation</title>
+  </head>
+  <body>
+    <header>
+      <div class="innerWrap">
+        <h1>
+          <img 
+          src="images/hero_text.png" 
+          srcset="images/hero_text.png 1x,images/hero_text@2x.png 2x" 
+          alt="Welcome to Our Wedding Party">
+        </h1>
+        <nav>
+          <ul class="ffJosefin">
+            <li><a href="#msgArea">Message</a></li>
+            <li><a href="#dateArea">Date</a></li>
+            <li><a href="#formArea">Form</a></li>
+          </ul>
+        </nav>
+        <p class="scroll ffJosefin">Scroll<br><img src="images/bar.png" alt=""></p>
+      </div>
+    </header>
+    <main>
+      <section class="msgSec" id="msgArea">
+        <div class="innerWrap">
+          <h2 class="ffJosefin">Message</h2>
+          <p>
+            この度、カピぞうとカピ子は<br>
+            ウェディングパーティーを開催することとなりました。<br>
+          </p>
+          <p>
+            お忙しいとは思いますが、ご参加いただけたら嬉しいです。<br>
+            ご出欠のお知らせは、ページ下のフォームよりお願い申し上げます。<br>
+          </p>
+          <p class="illust"><img src="images/message_img.png" alt="カピぞうとカピ子"></p>
+        </div>
+      </section>
+      <section class="dateSec" id="dateArea">
+        <div class="innerWrap">
+          <h2 class="ffJosefin">Save the Date</h2>
+          <div class="layoutWrap">
+            <p><img src="images/date_img.jpg" alt=""></p>
+            <div>
+              <p class="dateDetailSec">
+                3022.8.8 <span class="word1">Thu</span><br>
+                <span class="word2">Start</span> <span class="word3">18:30-</span>
+              </p>
+              <section class="accessSec">
+                <h3 class="ffJosefin">Access</h3>
+                <p>
+                  レンガ街ストリート1-2-3<br>
+                  Ristorante Capita にて<br>
+                  03-XXXX-XXXX<br>
+                </p>
+              </section>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="formSec" id="formArea">
+        <div class="innerWrap">
+          <h2 class="ffJosefin">RSVP</h2>
+          <form action="" method="">
+            <p class="attendRadio">
+              <label><input type="radio" name="attend" value="ご出席" checked="checked">ご出席</label>
+              <label><input type="radio" name="attend" value="ご欠席">ご欠席</label>
+            </p>
+            <p>
+              お名前<input type="text" name="user_name">
+            </p>
+            <p>
+              メールアドレス<input type="email" name="user_mail">
+            </p>
+            <p>
+              ご自身のタイプ
+              <select name="user_type">
+                <option value="草食動物">草食動物</option>
+                <option value="肉食動物">肉食動物</option>
+                <option value="人間さん">人間さん</option>
+              </select>
+            </p>
+            <p class="allergyCheck">
+              アレルギーのある食べ物<br>
+              <label><input type="checkbox" name="allergy" value="卵">卵</label>
+              <label><input type="checkbox" name="allergy" value="乳">乳</label>
+              <label><input type="checkbox" name="allergy" value="小麦">小麦</label>
+              <label><input type="checkbox" name="allergy" value="大豆">大豆</label>
+            </p>
+            <p>
+              メッセージ
+              <textarea name="message"></textarea>
+            </p>
+            <p class="submitBtn">
+              <input type="submit" value="Send" class="ffJosefin">
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="ffJosefin">
+      <p><small>© Capyzou ＆ Capyco</small></p>
+    </footer>
+  </body>
+</html>

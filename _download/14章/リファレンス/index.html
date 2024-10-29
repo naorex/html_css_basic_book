@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="styles/tomorrow-night-eighties.css"> -->
+    <link rel="stylesheet" href="js/styles/monokai-sublime.css">
+    <script src="js/highlight.js"></script>
+    <script>hljs.highlightAll();</script>
+    <title>CSSのみでハンバーガーメニューをつける方法 | Dev Blog</title>
+  </head>
+  <body>
+    <header>
+      <h1><img src="images/logo.png" alt="Dev Blog"></h1>
+      <nav>
+        <ul>
+          <li><a href="#">HOME</a></li>
+          <li><a href="#">ABOUT</a></li>
+          <li class="current"><a href="#">BLOG</a></li>
+          <li><a href="#">CONTACT</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div>
+      <main>
+        <article>
+          <h2>CSSのみでハンバーガーメニューをつける方法</h2>
+          <p class="postdate">
+            <time datetime="2021-xx-xxT21:03">
+              2021年8月8日12時34分
+            </time>
+          </p>
+          <p class="eyecatch">
+            <img src="images/eyecatch.png" alt="CSSだけでハンバーガーメニューの実装">
+          </p>
+          <section>
+            <p>JavaScriptを使わなくても、CSSのみで開いたり閉じたりするメニューを作ることができます。<br>
+            今回はその方法をご紹介します！</p>
+            <h3>HTMLの記述</h3>
+            <p>
+<pre><code class="html">&lt;nav class="gMenu"&gt;
+  &lt;input class="menu-btn" type="checkbox" id="menu-btn"&gt;
+  &lt;label class="menu-icon" for="menu-btn"&gt;
+    &lt;span class="navicon"&gt;&lt;/span&gt;
+  &lt;/label&gt;
+  &lt;ul class="menu"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;menu1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;menu2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;menu3&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+            </p>
+          </section>
+          <section>
+            <h3>HTMLの解説</h3>
+            <section>
+              <h4>HTMLの挿入場所</h4>
+              <p>
+                どこに配置しても基本的には動くと思いますが、headerタグ内の最後やbodyの終了タグの直前に配置すると問題は起こりにくいと思います。
+              </p>
+            </section>
+            <section>
+              <h4>HTMLの解説とポイント</h4>
+              <p>
+                ハンバーガーメニューは多くの場合、グローバルメニューとして使用されるのでnavタグを使用しています。ご自身のコードに合わせてdivタグなどに変更可能ですが、class="menu-btn"をつけるようにしてください。
+              </p>
+<pre><code class="html">&lt;input class="menu-btn" type="checkbox" id="menu-btn"&gt;</code></pre>
+              <p>
+                メニューの開閉状態を決めるためのチェックボックスです。ボックス自体は邪魔なのでCSSで非表示にしています。
+              </p>
+<pre><code class="html">&lt;label class="menu-icon" for="menu-btn"&gt;
+  &lt;span class="navicon"&gt;&lt;/span&gt;
+&lt;/label&gt;</code></pre>
+              <p>
+                ハンバーガメニューと呼ばれる由来でもある三本線（メニューボタン）を表示している部分です。spanタグで線を引き、それと同じ大きさの線をCSSの疑似要素（::before,::after）で追加して三本にしています。
+              </p>
+              <p>
+                labelタグでマークアップしてfor="menu-btn"属性をつけることで、label要素をクリックした時に前述のチェックボックスのON/OFFを切り替えることができます。
+                これは、チェックボックスがCSSで非表示になっていても動作します。
+              </p>
+<pre><code class="html">&lt;ul class="menu"&gt;
+  &lt;li&gt;&lt;a href="menu1.html"&gt;menu1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="menu2.html"&gt;menu2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="menu3.html"&gt;menu3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+              <p>
+                表示されるメニュー部分です。CSSで整形しているのと、overflow:hidden;max-height:0;を使用してメニューボタンが押されるまでは表示されないようになっています。
+              </p>
+            </section>
+          </section>
+          <section>
+            <h3>大まかな仕組みの説明</h3>
+            <p>
+              擬似クラスセレクタ「:checked」と一般兄弟結合子「~」をうまく組み合わせてメニューの表示と非表示を切り替えています。<br>
+            </p>
+            <ul>
+              <li>1. メニューボタンを押すとチェックボックスのON/OFFが切り替わる</li>
+              <li>2. チェックボックスがONの時のCSSは「:checked」で指定可能</li>
+              <li>3. チェックボックスがONの時のメニューボタンやメニューのCSSは「:checked」と「~」の組み合わせで指定可能</li>
+              <li>4. チェックボックスがONの時 ⇒ メニューを表示。メニューボタンを✕に。</li>
+              <li>5. チェックボックスがOFFの時 ⇒ メニューを非表示。メニューボタンを三本線に。</li>
+            </ul>
+          </section>
+          <section>
+            <h3>CSSの記述</h3>
+            <p>
+<pre><code class="css">/* メニューを画面上部に固定表示しています */
+.gMenu {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+}
+/* メニューアイコンを画面右上に固定しています */
+.gMenu .menu-icon {
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 12px;
+  padding-top: 5px;
+  height: 12px;
+}
+/* メニューアイコン（三本線）の真ん中の線です */
+.gMenu .menu-icon .navicon {
+  background: #ffc107; /* 色は自由に変更可能です */
+  display: block;
+  height: 2px; /* 太さ */
+  width: 31px; /* 長さ */
+  position: relative;
+  transition: background .4s ease-out; /* 形が変わる時のアニメーション */
+}
+/* メニューアイコン（三本線）の上と下の線を疑似要素で追加 */
+.gMenu .menu-icon .navicon::before,
+.gMenu .menu-icon .navicon::after {
+  background: #ffc107; /* 色は自由に変更可能です */
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .4s ease-out; /* 形が変わる時のアニメーション */
+  width: 100%;
+}
+.gMenu .menu-icon .navicon::before {top: 10px;} /* 位置を上にずらしています */
+.gMenu .menu-icon .navicon::after {top: -10px;} /* 位置を下にずらしています */
+/* 表示されるメニューです */
+.gMenu .menu {
+  background-color: rgba(255,255,255,0.9);
+  overflow: hidden;
+  max-height: 0; /* ★最初は高さを0にして非表示状態に */
+  transition: max-height .6s; /* 表示されるときのアニメーション */
+  text-align: center;
+}
+/* メニュー部分のデザインです */
+.gMenu .menu li:first-of-type {
+  padding-top: 50px;
+}
+.gMenu .menu li a {
+  display: block;
+  padding: 24px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.gMenu .menu li a:hover {
+  background-color: #f4f4f4;
+}
+/* チェックボックスは常に非表示です */
+.gMenu .menu-btn {
+  display: none;
+}
+/* ▼▼▼以下はチェックボックスがONの時の状態です▼▼▼ */
+.gMenu .menu-btn:checked ~ .menu {
+  max-height: 338px; /* ★チェックボックスがオンの時高さを338pxにして表示させます */
+  transition: max-height .6s;
+}
+/* メニューボタンの中央の線を非表示に */
+.gMenu .menu-btn:checked ~ .menu-icon .navicon {background: transparent;}
+
+/* メニューボタンの上下の線を45度傾けて✕印を作ります */
+.gMenu .menu-btn:checked ~ .menu-icon .navicon::before {transform: rotate(-45deg);top: 0;}
+.gMenu .menu-btn:checked ~ .menu-icon .navicon::after {transform: rotate(45deg);top: 0;}</code></pre>
+            </p>
+            <section>
+              <h4>■CSSのポイント</h4>
+              <p>
+  <pre><code class="css">.gMenu .menu-btn:checked ~ .menu {</code></pre>
+                チェックボックスがチェックされている時のメニュー「.menu」の状態を指定します。
+              </p>
+            </section>
+          </section>
+          <section>
+            <h3>CSSの読み込み例</h3>
+            <section>
+              <h4>CSSを既存のCSSファイルに追記する場合</h4>
+              <p>
+                上記の「CSSの記述」にあるコードを既存のCSSの一番最後にコピー＆ペーストしてください。
+              </p>
+            </section>
+            <section>
+              <h4>CSSを外部ファイルとして読み込む場合</h4>
+              <p>
+<pre><code class="html">&lt;link rel="stylesheet" href="menu.css"&gt;</code></pre>
+              </p>
+            </section>
+          </section>
+          <section>
+            <h3>デモ</h3>
+            <p>動作確認用ページは<a href="./demo/index.html">こちら</a></p>
+          </section>
+        </article>
+      </main>
+      <aside>
+        <nav class="authorNav">
+          <h2>Author</h2>
+          <p class="profImage"><img src="images/prof.png" alt="イメージイラスト">
+          </p>
+          <p>マークアップエンジニアです。<br>
+          このブログではコーディングについてのTipsや日々の学びをアウトプットしています。</p>
+        </nav>
+        <nav class="categoryNav">
+          <h2>Category</h2>
+          <ul>
+            <li><a href="#">HTML(14)</a></li>
+            <li><a href="#">CSS(25)</a></li>
+            <li><a href="#">WordPress(31)</a></li>
+            <li><a href="#">仕事術(12)</a></li>
+            <li><a href="#">JavaScript(21)</a></li>
+          </ul>
+        </nav>
+      </aside>
+    </div>
+    <footer>
+      <p><small>© 2021 Dev Blog</small></p>
+    </footer>
+  </body>
+</html>
