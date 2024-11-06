@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
 body {
-  background-color: pink;
+  background-color: #bbf1ef;
+  /*代表的なフォントを複数指定しておくのが普通。左から優先*/
+  /*bodyの中に書くと全体に適用*/
+  font-family: "Verdana", "Hiragino Sans", "Meiryo", sans-serif;
+}
+h1 {
+  font-size: 18px;
 }
