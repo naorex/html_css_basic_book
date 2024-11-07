@@ -8,4 +8,22 @@ body {
 }
 h1 {
   font-size: 18px;
+  /*枠線をつける（ショートハンド=省略形の書き方）*/
+  border: 3px solid #ffffff;
+  /*枠線の枠を丸くする*/
+  border-radius: 20px;
+  /*内側の余白を付ける*/
+  padding: 6px 0;
+  /*外側の余白を付ける。auto にすると枠が中央揃え*/
+  margin: 20px auto;
+  /*h1要素の横幅を指定*/
+  width: 300px;
+  /*文字を枠内で中央寄せ*/
+  text-align: center;
+}
+/*その他の要素も中央寄せ*/
+p,
+ul {
+  text-align: center;
+  margin-bottom: 20px;
 }
