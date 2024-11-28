@@ -6,6 +6,7 @@ body {
   /*bodyの中に書くと全体に適用*/
   font-family: "Verdana", "Hiragino Sans", "Meiryo", sans-serif;
 }
+
 h1 {
   font-size: 18px;
   /*枠線をつける（ショートハンド=省略形の書き方）*/
@@ -21,9 +22,38 @@ h1 {
   /*文字を枠内で中央寄せ*/
   text-align: center;
 }
-/*その他の要素も中央寄せ*/
+
 p,
 ul {
+  /*その他の要素も中央寄せ*/
   text-align: center;
+  margin-bottom: 20px;
+  /*ボタンをまとめて中央寄せ*/
+  width: 300px;
+  margin: 0 auto;
+}
+
+img {
+  /*画像を丸くする*/
+  border-radius: 50%;
+}
+
+a {
+  /*a要素に背景色を付ける*/
+  background-color: #ff9a9e;
+  /*ブロックボックスに変更*/
+  display: block;
+  /*ボタンの下に余白を付ける*/
+  padding: 20px 0;
+  /*ボタンの角を丸くする*/
+  border-radius: 4px;
+  /*ボタンの文字色を設定する*/
+  color: #ffffff;
+  /*ボタンの文字の太さ*/
+  font-weight: bold;
+}
+
+li {
+  /*ボタンの下に余白を付ける*/
   margin-bottom: 20px;
 }
