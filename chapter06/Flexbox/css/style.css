@@ -11,3 +11,6 @@ ul li {
 }
 
 /* 以下にFlexboxの練習 */
+ul {
+  display: flex;
+}
