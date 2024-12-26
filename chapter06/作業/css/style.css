@@ -10,6 +10,26 @@ header nav ul {
   /*グローバルナビゲーションのCSSを書く*/
   display: flex;
   justify-content: center;
+  /*ナビゲーションの装飾*/
+  border-top: 2px solid #7c5d48;
+  border-bottom: 2px solid #7c5d48;
+  background-color: rbga(255, 255, 255, 0.42);
+  padding: 12px 0px 10px;
+}
+
+/*以下の header nav ul という書き方はタイプセレクタと呼ぶ*/
+/*header内のnav内のul要素のみに適用する際に用いる*/
+
+header nav ul li {
+  /*ナビゲーション項目の余白*/
+  margin: 0 20px;
+}
+
+header nav ul li a {
+  /*ナビゲーション項目の文字を装飾*/
+  font-size: 22px;
+  font-weight: bold;
+  color: #7c5d48;
 }
 
 body {
