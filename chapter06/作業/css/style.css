@@ -32,6 +32,11 @@ header nav ul li a {
   color: #7c5d48;
 }
 
+header nav ul li a:hover {
+  /*マウスカーソルをあてた時の装飾（テキストデコレーション）*/
+  text-decoration: underline double;
+}
+
 body {
   /* 背景画像の指定 */
   background-image: url(../images/bg.png);
@@ -45,4 +50,23 @@ h1 {
   /*ロゴを中央寄せにする*/
   text-align: center;
   padding: 20px 0px 16px;
+}
+
+div {
+  /*コンテンツの幅を指定*/
+  width: 1240px;
+  margin: 0 auto 50px;
+  /*メインエリアとサイドバーを横並び*/
+  display: flex;
+  /*メインエリアとサイドバーの間に余白をつける*/
+  justify-content: space-between;
+}
+
+main {
+  /*メインエリアとサイドバーの横幅をflex-basisで指定*/
+  flex-basis: 920px;
+  background-color: #ffffff;
+}
+aside {
+  flex-basis: 284px;
 }
