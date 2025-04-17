@@ -1,72 +1,72 @@
 @charset "utf-8";
 
 header {
-  /*ヘッダーのCSSを書く*/
+  /* ヘッダーのCSSを書く */
   width: 1240px;
   margin: 0 auto 44px;
 }
 
 header nav ul {
-  /*グローバルナビゲーションのCSSを書く*/
+  /* グローバルナビゲーションのCSSを書く */
   display: flex;
   justify-content: center;
-  /*ナビゲーションの装飾*/
+  /* ナビゲーションの装飾 */
   border-top: 2px solid #7c5d48;
   border-bottom: 2px solid #7c5d48;
   background-color: rbga(255, 255, 255, 0.42);
   padding: 12px 0px 10px;
 }
 
-/*以下の header nav ul という書き方はタイプセレクタと呼ぶ*/
-/*header内のnav内のul要素のみに適用する際に用いる*/
+/* 以下の header nav ul という書き方はタイプセレクタと呼ぶ */
+/* header内のnav内のul要素のみに適用する際に用いる */
 
 header nav ul li {
-  /*ナビゲーション項目の余白*/
+  /* ナビゲーション項目の余白 */
   margin: 0 20px;
 }
 
 header nav ul li a {
-  /*ナビゲーション項目の文字を装飾*/
+  /* ナビゲーション項目の文字を装飾 */
   font-size: 22px;
   font-weight: bold;
   color: #7c5d48;
 }
 
 header nav ul li a:hover {
-  /*マウスカーソルをあてた時の装飾（テキストデコレーション）*/
+  /* マウスカーソルをあてた時の装飾（テキストデコレーション） */
   text-decoration: underline double;
 }
 
 body {
   /* 背景画像の指定 */
   background-image: url(../images/bg.png);
-  /*ページ全体のフォントを設定*/
+  /* ページ全体のフォントを設定 */
   font-size: 16px;
   font-family: "arial", "Hiragino Sans", "Meiryo", sans-serif;
   color: #333333;
 }
 
 h1 {
-  /*ロゴを中央寄せにする*/
+  /* ロゴを中央寄せにする */
   text-align: center;
   padding: 20px 0px 16px;
 }
 
 div {
-  /*コンテンツの幅を指定*/
+  /* コンテンツの幅を指定 */
   width: 1240px;
   margin: 0 auto 50px;
-  /*メインエリアとサイドバーを横並び*/
+  /* メインエリアとサイドバーを横並び */
   display: flex;
-  /*メインエリアとサイドバーの間に余白をつける*/
+  /* メインエリアとサイドバーの間に余白をつける */
   justify-content: space-between;
 }
 
 main {
-  /*メインエリアとサイドバーの横幅をflex-basisで指定*/
+  /* メインエリアとサイドバーの横幅をflex-basisで指定 */
   flex-basis: 920px;
   background-color: #ffffff;
-  /*枠に丸角と影を付ける*/
+  /* 枠に丸角と影を付ける */
   border-radius: 16px;
   padding: 62px 72px 32px 72px;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.16);
@@ -77,10 +77,23 @@ aside {
 }
 
 aside nav {
-  /*サイドバーを装飾*/
+  /* サイドバーを装飾 */
   border-radius: 16px;
   background-color: #ffffff;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.16);
   padding: 24px 28px;
   margin-bottom: 24px;
+}
+
+aside nav h2 {
+  /* ローカルナビゲーションの見出しを装飾 */
+  margin-bottom: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #7c5d48;
+}
+
+aside nav ul {
+  /* ローカルナビゲーションの文字サイズを変更 */
+  font-size: 14px;
 }
