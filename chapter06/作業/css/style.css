@@ -97,3 +97,15 @@ aside nav ul {
   /* ローカルナビゲーションの文字サイズを変更 */
   font-size: 14px;
 }
+
+.categoryNav ul li {
+  /* リスト項目にマーカーを付けて余白を調整 */
+  list-style-type: square;
+  color: #7c5d48;
+  margin: 0 0 16px 20px;
+}
+
+.categoryNav ul li a {
+  /* リスト項目の文字色を黒に戻す */
+  color: #333333;
+}
