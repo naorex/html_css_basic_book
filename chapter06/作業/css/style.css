@@ -52,6 +52,45 @@ h1 {
   padding: 20px 0px 16px;
 }
 
+article h2 {
+  /* タイトルの文字を大きくする */
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+time {
+  /* 文字と背景を装飾 */
+  background-color: #91c777;
+  border-radius: 0px 22px 22px 22px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  padding: 13px 25px 12px 20px;
+  display: inline-block;
+}
+
+.postdate {
+  /* 余白を調整 */
+  margin-bottom: 26px;
+}
+
+.eyecatch {
+  margin-bottom: 26px;
+}
+
+article h3 {
+  /* 見出しを調整 */
+  border-bottom: 2px solid #6ab547;
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 600;
+  background-image: url(../images/h2_icon.png);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  padding: 20px 10px 10px 48px;
+}
+
 div {
   /* コンテンツの幅を指定 */
   width: 1240px;
@@ -108,4 +147,17 @@ aside nav ul {
 .categoryNav ul li a {
   /* リスト項目の文字色を黒に戻す */
   color: #333333;
+}
+
+.recentNav ul li {
+  /* ボーダーと余白の調整 */
+  border-bottom: 1px solid #7c5d48;
+  padding-bottom: 10px;
+  margin-bottom: 22px;
+}
+
+.recentNav ul {
+  /* スクロール出来るようにする */
+  height: 240px;
+  overflow: hidden scroll;
 }
