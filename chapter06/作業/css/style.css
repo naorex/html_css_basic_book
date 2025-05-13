@@ -91,6 +91,17 @@ article h3 {
   padding: 20px 10px 10px 48px;
 }
 
+article section p {
+  /* 本文の行間を調節 */
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+article section {
+  /* セクションの余白を調節 */
+  margin-bottom: 50px;
+}
+
 div {
   /* コンテンツの幅を指定 */
   width: 1240px;
@@ -109,6 +120,14 @@ main {
   border-radius: 16px;
   padding: 62px 72px 32px 72px;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.16);
+}
+
+footer {
+  /* フッターエリアを装飾 */
+  background-color: #523f2e;
+  color: #ffffff;
+  text-align: center;
+  padding: 14px 10px 20px;
 }
 
 aside {
