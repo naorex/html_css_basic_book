@@ -56,12 +56,25 @@
             value="ご出席"
             checked="checked"
           />ご出席 <input type="radio" name="attend" value="ご出席" />ご欠席
-          <p>お名前</p>
-          <p>メールアドレス</p>
-          <p>ご自身のタイプ 草食動物 肉食動物 人間さん</p>
-          <p>アレルギーのある食べ物 卵 乳 小麦 大豆</p>
-          <p>メッセージ</p>
-          <p>Send</p>
+          <p>お名前<input type="text" name="user_name" /></p>
+          <p>メールアドレス <input type="email" name="user_mail" /></p>
+          <p>
+            ご自身のタイプ
+            <select name="user_type">
+              <option value="草食動物">草食動物</option>
+              <option value="肉食動物">肉食動物</option>
+              <option value="人間さん">人間さん</option>
+            </select>
+          </p>
+          <p>
+            アレルギーのある食べ物
+            <input type="checkbox" name="allergy" value="卵" />卵
+            <input type="checkbox" name="allergy" value="乳" />乳
+            <input type="checkbox" name="allergy" value="小麦" />小麦
+            <input type="checkbox" name="allergy" value="大豆" />大豆
+          </p>
+          <p>メッセージ<textarea name="message"></textarea></p>
+          <p><input type="submit" value="Send" /></p>
         </form>
       </section>
     </main>
